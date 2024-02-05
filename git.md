@@ -374,7 +374,48 @@ O branch remoto, por outro lado, coloca as ramificações em um local que pode s
 -l, --list ---->  lista nomes de branch
 
 ## Git push
+```
 git$ git log --pretty=oneline
+git$ git checkout -b "feature"
+Switched to a new branch 'feature'
+paulo@lpc:git$ git log --pretty=oneline
+97dd777fda1534e6e03305bdb790ac84da7fefd8 (HEAD -> feature, origin/main, origin/HEAD, main) Update git.md
+fed1b277d7a1f63b6d10eca440ea9e95fcbab657 Subindo o git.md
+7adeff8bd56bfe3d901a20423b94d75e9d2c8472 Initial commit
+```
+
+git$ git commit -m "3º Trabalhando o sistema git na feature"
+[feature 9c3b7a8] 3º Trabalhando o sistema git na feature
+ 2 files changed, 512 insertions(+), 67 deletions(-)
+ mode change 100644 => 100755 git.md
+ create mode 100644 git.old
+paulo@lpc:git$ git status
+On branch feature
+nothing to commit, working tree clean
+
+`git$ git push --set-upstream origin feature`
+Esta linha sobe o código da maquina local para o github
+
+
+Quando não há informações pessoais no git, qualquer acção pode geream erro como o descrito abaixo:
+
+```
+git$ git commit -m "3º Trabalhando o sistema git na feature"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'paulo@lpc.(none)')
+```
+
 
 
 
